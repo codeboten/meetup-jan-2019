@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bikeshop-nginx
+  labels:
+    app: bikeshop
+spec:
+  containers:
+  - name: webserver
+    image: codeboten/goals:2018
+    ports:
+    - containerPort: 80

@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bikeshop-deployment
+  labels:
+    app: bikeshop
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bikeshop
+  template:
+    metadata:
+      labels:
+        app: bikeshop
+    spec:
+      containers:
+      - name: webserver
+        image: codeboten/goals:2019
+        ports:
+        - containerPort: 80
